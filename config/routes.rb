@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  mount Rswag::Ui::Engine => '/swagger'
-  mount Rswag::Api::Engine => '/swagger'
+  root 'home#index'
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   resources :vehicles
   resources :routes
   resources :cities

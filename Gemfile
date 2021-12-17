@@ -46,6 +46,14 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Guard automates various tasks by running custom rules whenever file or directories are modified.
+  gem 'guard'
+  # LiveReload guard allows to automatically reload your browser when 'view' files are modified.
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem "rack-livereload"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'readapt'
 end
 
 group :test do

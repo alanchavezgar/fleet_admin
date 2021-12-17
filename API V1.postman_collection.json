@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "ddbf61af-a840-458e-87bb-45958a5a772b",
+		"name": "API V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cities.json",
+			"item": [
+				{
+					"name": "list cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cities.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cities.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "create city",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cities.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cities.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cities/{id}.json",
+			"item": [
+				{
+					"name": "show city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities/{{id}}.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities",
+								"{{id}}.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cities/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cities",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "update city",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities/{{id}}.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities",
+								"{{id}}.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cities/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cities",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "delete city",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities/{{id}}.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities",
+								"{{id}}.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cities/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cities",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "defaultHost",
+			"value": "localhost:3000",
+			"type": "any"
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://{{defaultHost}}",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "ut irure pariatur anim officia",
+			"type": "any",
+			"description": "(Required) id"
+		}
+	]
+}

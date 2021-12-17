@@ -1,4 +1,16 @@
 <%= form_with(model: vehicle) do |form| %>
+  <%= form.label :identifier %>
+  <%= form.text_field :identifier %>
+
+  <%= form.label "fuel consumption (km/l)"%>
+  <%= form.number_field :fuel_consumption %>
+
+  <%= form.label :is_available %>
+  <%= form.check_box :is_available %>
+
+  <%= form.label :cities %>
+  <%= collection_select(:vehicle, :cities_id, City.all, :id, :name) %>
+
   <% if vehicle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>

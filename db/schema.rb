@@ -40,9 +40,11 @@ ActiveRecord::Schema.define(version: 2021_12_16_025735) do
     t.float "distance_traveled", default: 0.0
     t.float "fuel_consumption"
     t.float "fuel_consumed"
-    t.boolean "available"
+    t.boolean "is_available"
+    t.bigint "cities_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cities_id"], name: "index_vehicles_on_cities_id"
   end
 
 end
