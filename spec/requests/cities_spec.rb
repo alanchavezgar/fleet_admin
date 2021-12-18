@@ -27,7 +27,7 @@ RSpec.describe 'cities', type: :request do
         properties: {
           name: { type: :string }
         },
-        required: [ 'title', 'content' ]
+        required: [ 'name' ]
       }
 
       response(200, 'successful') do
@@ -66,12 +66,13 @@ RSpec.describe 'cities', type: :request do
 
     put('update city') do
       tags 'Cities'
+      consumes 'application/json'
       parameter name: :city, in: :body, schema: {
         type: :object,
         properties: {
           name: { type: :string }
         },
-        required: [ 'title', 'content' ]
+        required: [ 'name' ]
       }
       response(200, 'successful') do
         let(:id) { '123' }

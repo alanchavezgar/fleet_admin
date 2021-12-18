@@ -21,6 +21,17 @@ RSpec.describe 'routes', type: :request do
 
     post('create route') do
       tags 'Routes'
+      consumes 'application/json'
+      parameter name: :vehicle, in: :body, schema: {
+        type: :object,
+        properties: {
+          identifier: { type: :string },
+          fuel_consumption: { type: :float },
+          is_available: { type: :boolean },
+          city_id: { type: :integer }
+        },
+        required: [ 'identifier', 'fuel_consumption', 'is_available', 'city_id' ]
+      }
       response(200, 'successful') do
 
         after do |example|
@@ -57,6 +68,17 @@ RSpec.describe 'routes', type: :request do
 
     put('update route') do
       tags 'Routes'
+      consumes 'application/json'
+      parameter name: :vehicle, in: :body, schema: {
+        type: :object,
+        properties: {
+          identifier: { type: :string },
+          fuel_consumption: { type: :float },
+          is_available: { type: :boolean },
+          city_id: { type: :integer }
+        },
+        required: [ 'identifier', 'fuel_consumption', 'is_available', 'city_id' ]
+      }
       response(200, 'successful') do
         let(:id) { '123' }
 

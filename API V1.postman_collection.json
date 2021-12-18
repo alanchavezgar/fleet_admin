@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ddbf61af-a840-458e-87bb-45958a5a772b",
+		"_postman_id": "0465b227-0371-432c-bbc0-28c680fec56c",
 		"name": "API V1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -69,7 +69,21 @@
 					"name": "create city",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"id sed amet\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseUrl}}/cities.json",
 							"host": [
@@ -92,6 +106,15 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"id sed amet\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{baseUrl}}/cities.json",
 									"host": [
@@ -190,7 +213,21 @@
 					"name": "update city",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"id sed amet\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseUrl}}/cities/{{id}}.json",
 							"host": [
@@ -214,6 +251,15 @@
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"id sed amet\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{baseUrl}}/cities/{{id}}.json",
 									"host": [
@@ -305,6 +351,875 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "routes.json",
+			"item": [
+				{
+					"name": "list routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/routes.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"routes.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/routes.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"routes.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "create route",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "null",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/routes.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"routes.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "null",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/routes.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"routes.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "routes/{id}.json",
+			"item": [
+				{
+					"name": "show route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/routes/{{id}}.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"routes",
+								"{{id}}.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/routes/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"routes",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "update route",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "null",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/routes/{{id}}.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"routes",
+								"{{id}}.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "null",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/routes/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"routes",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "delete route",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/routes/{{id}}.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"routes",
+								"{{id}}.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/routes/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"routes",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "vehicles.json",
+			"item": [
+				{
+					"name": "list vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehicles.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehicles.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vehicles.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vehicles.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "create vehicle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "null",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vehicles.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehicles.json"
+							],
+							"variable": [
+								{
+									"key": "defaultHost",
+									"value": "{{defaultHost}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "null",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vehicles.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vehicles.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "vehicles",
+			"item": [
+				{
+					"name": "{id}.json",
+					"item": [
+						{
+							"name": "show vehicle",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vehicles/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vehicles",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vehicles/{{id}}.json",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vehicles",
+												"{{id}}.json"
+											],
+											"variable": [
+												{
+													"key": "defaultHost",
+													"value": "{{defaultHost}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "update vehicle",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "null",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vehicles/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vehicles",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "null",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/vehicles/{{id}}.json",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vehicles",
+												"{{id}}.json"
+											],
+											"variable": [
+												{
+													"key": "defaultHost",
+													"value": "{{defaultHost}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "delete vehicle",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vehicles/{{id}}.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vehicles",
+										"{{id}}.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vehicles/{{id}}.json",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vehicles",
+												"{{id}}.json"
+											],
+											"variable": [
+												{
+													"key": "defaultHost",
+													"value": "{{defaultHost}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "send to route",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"route_id\": -49528841,\n    \"exfd\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vehicles/:id/send_to_route.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vehicles",
+										":id",
+										"send_to_route.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										},
+										{
+											"key": "id",
+											"value": "ullamco",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"route_id\": -49528841,\n    \"exfd\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/vehicles/:id/send_to_route.json",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vehicles",
+												":id",
+												"send_to_route.json"
+											],
+											"variable": [
+												{
+													"key": "defaultHost",
+													"value": "{{defaultHost}}"
+												},
+												{
+													"key": "id",
+													"value": "ullamco",
+													"description": "(Required) id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "send to route",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vehicles/:id/finish_route.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vehicles",
+										":id",
+										"finish_route.json"
+									],
+									"variable": [
+										{
+											"key": "defaultHost",
+											"value": "{{defaultHost}}"
+										},
+										{
+											"key": "id",
+											"value": "ullamco",
+											"description": "(Required) Vehicle id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/vehicles/:id/finish_route.json",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vehicles",
+												":id",
+												"finish_route.json"
+											],
+											"variable": [
+												{
+													"key": "defaultHost",
+													"value": "{{defaultHost}}"
+												},
+												{
+													"key": "id",
+													"value": "ullamco",
+													"description": "(Required) Vehicle id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"variable": [
@@ -320,7 +1235,7 @@
 		},
 		{
 			"key": "id",
-			"value": "ut irure pariatur anim officia",
+			"value": "ullamco",
 			"type": "any",
 			"description": "(Required) id"
 		}

@@ -41,8 +41,7 @@
                   }
                 },
                 "required": [
-                  "title",
-                  "content"
+                  "name"
                 ]
               }
             }
@@ -85,6 +84,23 @@
           "200": {
             "description": "successful"
           }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          }
         }
       },
       "delete": {
@@ -116,9 +132,41 @@
         "tags": [
           "Routes"
         ],
+        "parameters": [
+
+        ],
         "responses": {
           "200": {
             "description": "successful"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "identifier": {
+                    "type": "string"
+                  },
+                  "fuel_consumption": {
+                    "type": "float"
+                  },
+                  "is_available": {
+                    "type": "boolean"
+                  },
+                  "city_id": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "identifier",
+                  "fuel_consumption",
+                  "is_available",
+                  "city_id"
+                ]
+              }
+            }
           }
         }
       }
@@ -151,9 +199,41 @@
         "tags": [
           "Routes"
         ],
+        "parameters": [
+
+        ],
         "responses": {
           "200": {
             "description": "successful"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "identifier": {
+                    "type": "string"
+                  },
+                  "fuel_consumption": {
+                    "type": "float"
+                  },
+                  "is_available": {
+                    "type": "boolean"
+                  },
+                  "city_id": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "identifier",
+                  "fuel_consumption",
+                  "is_available",
+                  "city_id"
+                ]
+              }
+            }
           }
         }
       },
@@ -186,9 +266,41 @@
         "tags": [
           "Vehicles"
         ],
+        "parameters": [
+
+        ],
         "responses": {
           "200": {
             "description": "successful"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "identifier": {
+                    "type": "string"
+                  },
+                  "fuel_consumption": {
+                    "type": "float"
+                  },
+                  "is_available": {
+                    "type": "boolean"
+                  },
+                  "city_id": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "identifier",
+                  "fuel_consumption",
+                  "is_available",
+                  "city_id"
+                ]
+              }
+            }
           }
         }
       }
@@ -221,14 +333,115 @@
         "tags": [
           "Vehicles"
         ],
+        "parameters": [
+
+        ],
         "responses": {
           "200": {
             "description": "successful"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "identifier": {
+                    "type": "string"
+                  },
+                  "fuel_consumption": {
+                    "type": "float"
+                  },
+                  "is_available": {
+                    "type": "boolean"
+                  },
+                  "city_id": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "identifier",
+                  "fuel_consumption",
+                  "is_available",
+                  "city_id"
+                ]
+              }
+            }
           }
         }
       },
       "delete": {
         "summary": "delete vehicle",
+        "tags": [
+          "Vehicles"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    },
+    "/vehicles/{id}/send_to_route.json": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "send to route",
+        "tags": [
+          "Vehicles"
+        ],
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "route_id": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "title",
+                  "content"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicles/{id}/finish_route.json": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Vehicle id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "send to route",
         "tags": [
           "Vehicles"
         ],
