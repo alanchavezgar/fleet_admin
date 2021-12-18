@@ -36,15 +36,17 @@ ActiveRecord::Schema.define(version: 2021_12_16_025735) do
 
   create_table "vehicles", force: :cascade do |t|
     t.string "identifier", null: false
-    t.integer "current_location"
+    t.integer "current_location", default: 0
     t.float "distance_traveled", default: 0.0
-    t.float "fuel_consumption"
-    t.float "fuel_consumed"
-    t.boolean "is_available"
-    t.bigint "cities_id"
+    t.float "fuel_consumption", default: 0.0
+    t.float "fuel_consumed", default: 0.0
+    t.boolean "is_available", default: false
+    t.bigint "city_id"
+    t.bigint "route_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cities_id"], name: "index_vehicles_on_cities_id"
+    t.index ["city_id"], name: "index_vehicles_on_city_id"
+    t.index ["route_id"], name: "index_vehicles_on_route_id"
   end
 
 end

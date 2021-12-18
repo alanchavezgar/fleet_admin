@@ -1,8 +1,23 @@
+<%= javascript_pack_tag "select" %>
+
 <%= form_with(model: route) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :distance %>
+  <%= form.text_field :distance %>
+
+
+  <%= form.label :city %>
+  <%= form.collection_select(:city_ids, City.all, :id, :name, {}, { :multiple => true, class:"browser-default"}) %>
+
+  <%= form.label :city %>
+  <%= form.collection_select(:city_ids, City.all, :id, :name, {}, { :multiple => true, class:"browser-default"}) %>
+
+
   <% if route.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(route.errors.count, "error") %> prohibited this route from being saved:</h2>
-
+      <h5><%= pluralize(route.errors.count, "error") %> prohibited this route from being saved:</h5>
       <ul>
         <% route.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,7 +26,7 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
 <% end %>

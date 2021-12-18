@@ -21,6 +21,15 @@ RSpec.describe 'cities', type: :request do
 
     post('create city') do
       tags 'Cities'
+      consumes 'application/json'
+      parameter name: :city, in: :body, schema: {
+        type: :object,
+        properties: {
+          name: { type: :string }
+        },
+        required: [ 'title', 'content' ]
+      }
+
       response(200, 'successful') do
 
         after do |example|
@@ -57,6 +66,13 @@ RSpec.describe 'cities', type: :request do
 
     put('update city') do
       tags 'Cities'
+      parameter name: :city, in: :body, schema: {
+        type: :object,
+        properties: {
+          name: { type: :string }
+        },
+        required: [ 'title', 'content' ]
+      }
       response(200, 'successful') do
         let(:id) { '123' }
 

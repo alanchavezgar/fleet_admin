@@ -5,7 +5,7 @@
 
   <% if city.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
+      <h5><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h5>
 
       <ul>
         <% city.errors.each do |error| %>
@@ -15,7 +15,8 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+
 <% end %>

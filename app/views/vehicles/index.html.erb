@@ -1,20 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vehicles</h1>
+<h4>Vehicles</h4>
 
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th class="col s2">Name</th>
+      <th class="col s2">Is Available</th>
+      <th class="col s2">Current Location</th>
+      <th class="col s2">City</th>
+      <th class="col s4">Actions</th>
     </tr>
   </thead>
 
   <tbody>
+    <h7><%= "Empty" if @vehicles.empty? %></h7>
     <% @vehicles.each do |vehicle| %>
       <tr>
-        <td><%= link_to 'Show', vehicle %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= vehicle.identifier %></td>
+        <td><%= vehicle.is_available %></td>
+        <td><%= vehicle.current_location %></td>
+        <td><%= vehicle.city_id%></td>
+        <td><%= link_to 'Show', vehicle, class: "waves-effect waves-light btn-small" %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle), class: "waves-effect waves-light btn-small" %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-light red lighten-1  btn-small" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +31,27 @@
 
 <br>
 
-<%= link_to 'New Vehicle', new_vehicle_path %>
+<div class="row">
+  <div class="col s8">
+    <a
+      class="waves-effect waves-light btn"
+      href="<%= root_path%>"
+      data-role="button"
+      data-icon="info"
+      data-mini="true">
+      <i class="material-icons left">home</i>
+      Home
+    </a>
+  </div>
+  <div class="col s3">
+    <a
+      class="waves-effect waves-light btn"
+      href="<%= new_vehicle_path%>"
+      data-role="button"
+      data-icon="info"
+      data-mini="true">
+      <i class="material-icons left">add</i>
+      Add Vehicle
+    </a>
+  </div>
+</div>

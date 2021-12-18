@@ -1,5 +1,27 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: %i[ show edit update destroy ]
+  before_action :set_vehicle, only: %i[ show edit update destroy send_to_route finish_route ]
+
+  # POST /vehicles/1/send_to_route or /vehicles/1/send_to_route.json
+  def send_to_route
+    respond_to do |format|
+      if @vehicle.send_to_route(params[:route_id])
+        format.json { render json: @vehicle }
+      else
+        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # POST /vehicles/1/finish_route or /vehicles/1/finish_route.json
+  def finish_route
+    respond_to do |format|
+      if @vehicle.finish_route
+        format.json { render json: @vehicle }
+      else
+        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # GET /vehicles or /vehicles.json
   def index

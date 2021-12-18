@@ -1,6 +1,51 @@
-<h1>Fleet Admin</h1>
-<a href="<%= vehicles_path %>" data-role="button" data-icon="info" data-mini="true">Vehicles</a>
-<p>
-<a href="<%= cities_path %>" data-role="button" data-icon="info" data-mini="true">Cities</a>
-<p>
-<a href="<%= routes_path %>" data-role="button" data-icon="info" data-mini="true">Routes</a>
+<h4>Fleet Admin</h4>
+<a
+  class="waves-effect waves-light btn"
+  href="<%= vehicles_path %>"
+  data-role="button"
+  data-icon="info"
+  data-mini="true">
+  <i class="material-icons left">local_shipping</i>
+  Vehicles
+</a>
+<a
+  class="waves-effect waves-light btn"
+  href="<%= cities_path %>"
+  data-role="button"
+  data-icon="info"
+  data-mini="true">
+  <i class="material-icons left">location_city</i>
+  Cities
+</a>
+<a
+  class="waves-effect waves-light btn"
+  href="<%= routes_path %>"
+  data-role="button"
+  data-icon="info"
+  data-mini="true">
+  <i class="material-icons left">directions</i>
+  Routes
+</a>
+
+<h4>Vehicles in route</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th class="col s2">Identifier</th>
+      <th class="col s2">Current Location</th>
+      <th class="col s2">Route</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <h7><%= "Empty" if @vehicles.empty? %></h7>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.identifier %></td>
+        <td><%= vehicle.current_location %></td>
+        <td><%= vehicle.route_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

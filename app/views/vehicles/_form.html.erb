@@ -5,16 +5,19 @@
   <%= form.label "fuel consumption (km/l)"%>
   <%= form.number_field :fuel_consumption %>
 
-  <%= form.label :is_available %>
-  <%= form.check_box :is_available %>
+  <%= form.label :curren_city %>
+  <%= form.collection_select(:city_ids, City.all, :id, :name, {}, { class: "browser-default"} ) %>
 
-  <%= form.label :cities %>
-  <%= collection_select(:vehicle, :cities_id, City.all, :id, :name) %>
+  <p>
+    <label>
+      <%= form.check_box :is_available, id:"is_available" %>
+      <span>Is Available?</span>
+    </label>
+  </p>
 
   <% if vehicle.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
-
+      <h5><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h5>
       <ul>
         <% vehicle.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -23,7 +26,7 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
 <% end %>

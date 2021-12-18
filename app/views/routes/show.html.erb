@@ -1,4 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Route</span>
+        <p><%= Route.human_attribute_name(:name) + ":" %></p>
+        <p><%= @route.name %></p>
+        <br>
+        <p><%= Route.human_attribute_name(:distance) + ":" %></p>
+        <p><%= @route.distance %></p>
+        <br>
+        <p><%= Route.human_attribute_name(:cities) + ":" %></p>
+        <% @route.city_ids.each do |city| %>
+          <p><%= City.find(city).name %></p>
+        <% end %>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Edit', edit_route_path(@route) %>
+        <%= link_to 'Back', routes_path %>
+      </div>
+    </div>
+  </div>
+</div>

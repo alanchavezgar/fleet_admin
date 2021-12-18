@@ -22,9 +22,30 @@
         "tags": [
           "Cities"
         ],
+        "parameters": [
+
+        ],
         "responses": {
           "200": {
             "description": "successful"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "content"
+                ]
+              }
+            }
           }
         }
       }
@@ -56,6 +77,9 @@
         "summary": "update city",
         "tags": [
           "Cities"
+        ],
+        "parameters": [
+
         ],
         "responses": {
           "200": {
